@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Free And Open Source SEO Software
 <img src="http://mikelevinseo.com/images/pipulate-interface.png" alt="FOSS SEO Software"/>
 ========
@@ -320,3 +321,7 @@ instances.
 ## 9\. License
 Pipulate uses the (MIT License as defined by OpenSource.org)[http://opensource.org/licenses/MIT].
 This repository's copy of the license is [here](./LICENSE.md).
+=======
+# pipulate
+Clone of Mike Levin's Pipulate Project
+>>>>>>> f5d2e7e2c30f0482201114c633da35bc00c840a1

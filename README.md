@@ -1,6 +1,4 @@
 # Free And Open Source SEO Software
-<img src="http://mikelevinseo.com/images/pipulate-interface.png" alt="FOSS SEO Software"/>
-========
 
 Pipulate expands your mind... and the way spreadsheets work by using functions
 written and executed in Python entirely outside of the spreadsheet, cleanly
@@ -11,22 +9,15 @@ Social Media professionals to give them superpowers. Watch the
 [Google Slides](http://goo.gl/v71kw8) and visit the sister-project,
 [Levinux](http://levinux.com).
 
-<img src="http://mikelevinseo.com/images/free-and-open-source-seo-software.png" alt="Free and Open Source SEO Software" />
-
 ## Table of Contents
 
-1. [Introduction](#1-introduction)
-    - [Overview](#overview)
-    - [Project Background](#project-background)
-    - [Python](#python)
-    - [Bookmarklet](#bookmarklet)
-    - [Great For Newbs!](#great-for-newbs)
-2. [Installation](#2-installation)
+ [Installation](#2-installation)
     - [Runs On Anything](#runs-on-anything)
     - [Debian/Ubuntu](#debian-ubuntu)
     - [Mac OS X](#mac-os-x)
     - [Windows](#windows)
-3. [Conventions](#3-conventions)
+
+ [Conventions](#3-conventions)
     - [Drag to Bookmarks Bar](#drag-to-bookmarks-bar)
     - [Create New Spreadsheet](#create-new-spreadsheet)
     - [Clicking The Bookmarklet](#clicking-the-bookmarklet)
@@ -39,12 +30,6 @@ Social Media professionals to give them superpowers. Watch the
     - [Ad Hoc Investigations](#ad-hoc-investigations)
     - [Grab Links](#grab-links)
     - [Stormy Weather](#stormy-weather)
-4. [Functions](#4-functions)
-5. [Scheduling](#5-scheduling)
-6. [Customizing](#6-customizing)
-7. [FAQ](#7-faq)
-8. [Roadmap](#8-roadmap)
-9. [License](#9-license)
 
 ## 1\. Introduction
 ### Overview
@@ -171,8 +156,7 @@ From a Terminal:
 ### Mac OS X
 From a Terminal:
 - (Python 2.7 & Distribute usually already installed)
-- lxml? Must check if Macs have that by default.
-- sudo easy_install pip
+- sudo pip installlxml
 - sudo pip install requests
 - sudo pip install flask_wtf
 - sudo pip install gspread
@@ -202,121 +186,3 @@ From a CygWin Shell (MinTTY):
 - python webpipulate.py
 - Visit http://localhost:8888
 
-## 3\. Conventions
-### Drag to Bookmarks Bar
-### Create New Spreadsheet
-### Clicking The Bookmarklet
-### Logging In
-### Initializing Sheet
-### The Tabs
-### Function Names
-### Input Columns
-### Question Marks
-### Ad Hoc Investigations
-### Grab Links
-### Stormy Weather
-
-## 4\. Functions
-### Scrapers
-### User Functions
-
-## 5\. Scheduling
-But Pipulate isn't just for ad hoc investigations in spreadsheets. Once you're
-happy with a particular data look-up task having worked out interactively, it
-can be automated. Job instructions come from the Google Doc itself, turning
-Pipulate servers into something as stateless and interchangeable as webheads.
-No data resides on these servers. They are only there to Pipulate the Google
-Spreadsheets. Get a Pipulate server from anywhere, fire-off a job, and then
-destroy the server if you care to. Nothing's lost!
-
-Once you're happy with the results of an ad hoc investigation (using question
-marks), replace the question marks with asterisks, and invite in a special
-gmail address that you set up, and watch the job get processed daily (or
-whatever). More documentation coming on the use of the question marks and
-asterisks to test, then schedule jobs coming soon. Also, look in the Config tab
-to see the RowThrottleNumber setting that keeps more than this number of rows
-from processing at once (great for SERP checking), and the RunJobEvery setting
-that you can set to values like 1 day, 1 week, 1 month, 3 days, 10 minutes, and
-variations thereof.
-
-## 6\. Customizing
-Not happy with the built-in functions? Write your own, and contributing them
-back to the project here on Github. Not comfortable with programming Python?
-Copy and paste the examples under the Scrapers tab, experimenting with he XPath
-and RegEx patterns to grab anything you like off a page. 
-
-## 7\. FAQ
-### OAuth2 For Your Security
-Because this employs OAuth2 by default to avoid configuration files and storing
-usernames and passwords, it will only work from localhost, or on machines
-resolving from a registered domain. If you go the registered domain route,
-you'll have to update the client_id under the getLoginlink to your own, under
-Google's Developer Console: https://console.developers.google.com/project
-
-### Username & Password For Scheduling
-I don't have the web user interface built yet to query the admin for a GMail
-username and password, and probably wouldn't be a good idea anyway, as I'm not
-running the Web UI in https mode, to keep server configuration as simple as
-possible. So that means to store a username and password on the computer (which
-is not a good idea anyway) you must have a ../opt directory relative to
-pipulate (a folder named opt next to pipualte) and run pipulate like this:
-
-    python pipulate.py configure
-
-This will prompt you for a username and password, and pickle it unencrypted
-into ../opt. I recommend using a GMAil account that you set up specifically for
-Pipualte, and then turn on 2-Step Verification and then use an App-specific
-password, so that you can always revoke the password for that server. This is
-all only an issue if you want scheduling. "Manual" pipulating works just fine
-out of the box.
-
-### Scheduling
-I'm still working out the details of scheduling, specifically how to get the
-scheduler to run as a background daemon the same way the Python webserver is.
-There's nothing hard about it. Just haven't finished the work yet. To see it
-roughly working, run pipulate like this:
-
-    python pipulate.py scheduler
-
-### Linux Auto-Start Daemon & Cron Job
-Currently, the documentation on how to fully turn a Linux server into a
-Pipulate server is contained in these files in the repository:
-
-- pipulate
-- pipuweb
-
-The first file pipulate goes into /etc/init.d/ and then have the command:
-
-    update-rc.d pipulate enable
-
-...run once to set Pipulate to run in webserver mode, like Apache does, every
-time the server is started up or reboots. The second file, pipuweb, gets
-dropped into /etc/cron.hourly/ to ensure that the Pipulate webserver is always
-running, even if some glitch made it stop. The way the daemon is written makes
-it safe to keep trying to re-start the webserver. It won't create multiple
-instances.
-
-## 8\. Roadmap
-- Make links absolute on crawl
-- Add Menu tab and finalize Row Inserter init process
-- Add the built-in documentation (introspect docstrings vs. simple TabInit)
-- Fill in tons of useful functions for SEO and Social Media
-- Improve the Console Debugging Output when run as Scheduler
-- Let Levinux show Pipulate Console Debugging Output by selecting menu option
-- Optimize all over the place to reduce GData API calls
-- Behind-login support (fetching & crawling AS Facebook user, etc.)
-- Awesome UI & bookmarklet behavior from mobile
-- Make the spider a general row inserter from any Web/Net iterable item:
-  - Blog posts
-  - RSS feeds
-  - Email in-box (much to think about here)
-  - YouTube videos
-  - Tumblr Followers
-  - Pulling pics down from galleries
-  - Yadda, yadda, the fun never stops
-  - User your imagination
-  - Can't wait for community dynamics to kick-in
-
-## 9\. License
-Pipulate uses the (MIT License as defined by OpenSource.org)[http://opensource.org/licenses/MIT].
-This repository's copy of the license is [here](./LICENSE.md).

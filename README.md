@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # Free And Open Source SEO Software
+<<<<<<< HEAD
+=======
+========
+>>>>>>> 029f7aac5ac943d4ffcae4dbff76e2a017ebd25e
 
 Pipulate expands your mind... and the way spreadsheets work by using functions
 written and executed in Python entirely outside of the spreadsheet, cleanly
@@ -9,6 +14,7 @@ Social Media professionals to give them superpowers. Watch the
 [Google Slides](http://goo.gl/v71kw8) and visit the sister-project,
 [Levinux](http://levinux.com).
 
+<<<<<<< HEAD
 ## Table of Contents
 
  [Installation](#2-installation)
@@ -117,6 +123,12 @@ need to code "for loops" and provide lists of input from text files and other
 sources.
 
 ## 2\. Installation
+=======
+Cloned from Mike Levin's levinux
+
+
+## Installation
+>>>>>>> 029f7aac5ac943d4ffcae4dbff76e2a017ebd25e
 Pipulate is made available ready-to-run on your desktop without an install.
 Just download a copy of [Levinux](http://levinux.com), the Tiny Virtual Server
 for Education, and select Option #4. It'll take awhile, but it'll build into a
@@ -127,31 +139,6 @@ around and modify it yourself. And after you've had the Levinux experience, I
 suggest you get it running on your own real hardware, from your main machine's
 desktop to a Raspberry Pi.
 
-### Runs On Anything
-Get it running on your Mac, Windows or Linux desktop, from a ready-made virtual
-machine, a cloud server, or even a Raspberry Pi or other teensy tiny computer.
-It basically runs on anything. Then, visit the site you just created from a web
-browser (usually at http://localhost:8888), drag the bookmarklet to your
-Bookmark Bar, open a Google Spreadsheet, click the bookmarklet and get
-Pipulating! The data-collecting job that the initial job defines just starts
-twinkling in as new rows. You can get a taste of this from pipulate.com, where
-you can use my demo instance to kick the tires. Here are the preferred
-platforms for Pipulate in descending order of ease-of-installation and avoidance
-of nuanced issues (like lxml on Windows under CygWin!):
-
-### Debian/Ubuntu
-From a Terminal:
-- sudo apt-get install python-pip python-dev python-lxml git
-- sudo pip install requests
-- sudo pip install flask_wtf
-- sudo pip install gspread
-- sudo pip install lxml
-- pip install requests -U
-- cd /var
-- git clone https://github.com/miklevin/pipulate.git
-- cd pipulate
-- python webpipulate.py
-- Visit http://localhost:8888
 
 ### Mac OS X
 From a Terminal:
@@ -167,6 +154,7 @@ From a Terminal:
 - python webpipulate.py
 - Visit http://localhost:8888
 
+<<<<<<< HEAD
 ### Windows
 - Install CygWin with the following selected:
   - python 2.7
@@ -186,3 +174,11 @@ From a CygWin Shell (MinTTY):
 - python webpipulate.py
 - Visit http://localhost:8888
 
+=======
+org/licenses/MIT].
+This repository's copy of the license is [here](./LICENSE.md).
+=======
+# pipulate
+Clone of Mike Levin's Pipulate Project
+>>>>>>> f5d2e7e2c30f0482201114c633da35bc00c840a1
+>>>>>>> 029f7aac5ac943d4ffcae4dbff76e2a017ebd25e
